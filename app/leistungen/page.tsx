@@ -76,12 +76,12 @@ export default function LeistungenPage() {
       <section className="container mx-auto px-4 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <Card key={index} className="bg-card border-border hover:border-primary/50 transition-colors">
+            <Card key={index} className="bg-card border-border hover:border-secondary/50 transition-colors">
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <service.icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-4">
+                  <service.icon className="w-6 h-6 text-secondary" />
                 </div>
-                <CardTitle className="text-foreground">{service.title}</CardTitle>
+                <CardTitle className="text-secondary">{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
@@ -102,7 +102,11 @@ export default function LeistungenPage() {
               Kontaktieren Sie uns gerne telefonisch oder vereinbaren Sie direkt einen Termin online.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button
+                asChild
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors"
+              >
                 <Link href="/kontakt">
                   <Phone className="w-5 h-5 mr-2" />
                   Termin anfragen

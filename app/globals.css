@@ -121,4 +121,8 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Added blue color for links in body text */
+  a:not([class*="button"]):not([class*="btn"]) {
+    @apply text-secondary hover:text-secondary/80 transition-colors;
+  }
 }

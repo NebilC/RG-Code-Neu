@@ -42,7 +42,11 @@ export default function HomePage() {
               und Leidenschaft.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button
+                asChild
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors"
+              >
                 <Link href="/kontakt">
                   <Phone className="w-5 h-5 mr-2" />
                   Jetzt Termin anfragen
@@ -62,7 +66,7 @@ export default function HomePage() {
       {/* Services Grid */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Unsere Leistungen</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">Unsere Leistungen</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Von der Inspektion bis zur Reparatur – wir bieten Ihnen umfassenden Service für Ihr Fahrzeug
           </p>
@@ -70,12 +74,12 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <Card key={index} className="bg-card border-border hover:border-primary/50 transition-colors">
+            <Card key={index} className="bg-card border-border hover:border-secondary/50 transition-colors">
               <CardContent className="p-6">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <service.icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-4">
+                  <service.icon className="w-6 h-6 text-secondary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
+                <h3 className="text-lg font-semibold text-secondary mb-2">{service.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
               </CardContent>
             </Card>
@@ -104,7 +108,11 @@ export default function HomePage() {
               Meisterwerkstatt.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button
+                asChild
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors"
+              >
                 <Link href="/kontakt">
                   <Phone className="w-5 h-5 mr-2" />
                   Termin anfragen
@@ -125,47 +133,47 @@ export default function HomePage() {
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Warum RG Rüsselsheimer Garage?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">Warum RG Rüsselsheimer Garage?</h2>
             <div className="space-y-4">
               <div className="flex gap-4">
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-primary font-bold">✓</span>
+                <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-secondary font-bold">✓</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">Meisterbetrieb mit Erfahrung</h3>
+                  <h3 className="font-semibold text-secondary mb-1">Meisterbetrieb mit Erfahrung</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Qualifizierte Fachkräfte mit langjähriger Expertise
                   </p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-primary font-bold">✓</span>
+                <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-secondary font-bold">✓</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">Faire Preise & ehrliche Beratung</h3>
+                  <h3 className="font-semibold text-secondary mb-1">Faire Preise & ehrliche Beratung</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Transparente Kostenvoranschläge ohne versteckte Gebühren
                   </p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-primary font-bold">✓</span>
+                <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-secondary font-bold">✓</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">Alle Fabrikate willkommen</h3>
+                  <h3 className="font-semibold text-secondary mb-1">Alle Fabrikate willkommen</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Wir reparieren und warten alle Automarken professionell
                   </p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-primary font-bold">✓</span>
+                <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-secondary font-bold">✓</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">Moderne Ausstattung</h3>
+                  <h3 className="font-semibold text-secondary mb-1">Moderne Ausstattung</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     Neueste Diagnosetechnik für präzise Fehleranalyse
                   </p>
@@ -174,7 +182,11 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative h-[400px] rounded-lg overflow-hidden bg-muted">
-            <img src="/modern-auto-repair-shop-interior-with-professional.jpg" alt="Werkstatt Innenansicht" className="w-full h-full object-cover" />
+            <img
+              src="/modern-auto-repair-shop-interior-with-professional.jpg"
+              alt="Werkstatt Innenansicht"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>

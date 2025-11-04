@@ -1,4 +1,5 @@
 import { Phone, MapPin, Clock } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -8,18 +9,34 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <h3 className="text-lg font-bold text-primary mb-4">RG Rüsselsheimer Garage GmbH</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
               Ihre zuverlässige Meisterwerkstatt in Rüsselsheim. Qualität und ehrliche Beratung seit Jahren.
             </p>
+            <div className="flex items-center gap-4">
+              <Image
+                src="/images/logo-shield.png"
+                alt="RG Logo"
+                width={50}
+                height={50}
+                className="h-12 w-auto opacity-90"
+              />
+              <Image
+                src="/images/logo-text.png"
+                alt="Rüsselsheimer Garage"
+                width={120}
+                height={40}
+                className="h-8 w-auto opacity-90"
+              />
+            </div>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold text-foreground mb-4">Kontakt</h3>
+            <h3 className="text-lg font-bold text-secondary mb-4">Kontakt</h3>
             <div className="space-y-3">
               <a
                 href="tel:061423306222"
-                className="flex items-start gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-start gap-2 text-sm text-muted-foreground hover:text-secondary transition-colors"
               >
                 <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <span>06142 3306222</span>
@@ -37,7 +54,7 @@ export function Footer() {
 
           {/* Opening Hours */}
           <div>
-            <h3 className="text-lg font-bold text-foreground mb-4">Öffnungszeiten</h3>
+            <h3 className="text-lg font-bold text-secondary mb-4">Öffnungszeiten</h3>
             <div className="space-y-2 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 flex-shrink-0" />
