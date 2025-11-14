@@ -1,5 +1,6 @@
-import { Phone, MapPin, Clock } from "lucide-react"
+import { Phone, MapPin, Clock } from 'lucide-react'
 import Image from "next/image"
+import Link from "next/link"
 
 export function Footer() {
   return (
@@ -65,9 +66,18 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
+        <div className="border-t border-border mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} RG Rüsselsheimer Garage GmbH. Alle Rechte vorbehalten.</p>
+          <div className="flex gap-6">
+            <Link href="/impressum" className="hover:text-secondary transition-colors">
+              Impressum
+            </Link>
+            <Link href="/datenschutz" className="hover:text-secondary transition-colors">
+              Datenschutz
+            </Link>
+          </div>
         </div>
+        {/* </CHANGE> */}
       </div>
     </footer>
   )

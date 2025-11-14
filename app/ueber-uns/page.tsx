@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Award, Users, Heart, Phone } from "lucide-react"
+import { Award, Users, Heart, Phone } from 'lucide-react'
 import Image from "next/image"
 
 export default function UeberUnsPage() {
@@ -33,7 +33,7 @@ export default function UeberUnsPage() {
               Über <span className="text-primary">Uns</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Lernen Sie die RG Rüsselsheimer Garage kennen – Ihr fairer Partner rund ums Auto.
+              Herzlich Willkommen bei Ihrer RG Rüsselsheimer Garage direkt an der A60/A67 in Königstädten
             </p>
           </div>
         </div>
@@ -43,22 +43,26 @@ export default function UeberUnsPage() {
       <section className="container mx-auto px-4 py-16 md:py-20">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">Ihre Meisterwerkstatt in Rüsselsheim</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">
+              RG Rüsselsheimer Garage – Ihre KFZ-Meisterwerkstatt
+            </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Willkommen bei der RG Rüsselsheimer Garage GmbH – Ihrer zuverlässigen Autowerkstatt in Rüsselsheim am
-                Main. Als Meisterbetrieb legen wir großen Wert auf Qualität, Präzision und ehrliche Beratung.
+                Wir sind Ihr kompetenter und zuverlässiger Ansprechpartner in Rüsselsheim. Ob Service oder Reparaturen –
+                bei uns sind Sie an der richtigen Adresse.
               </p>
               <p>
-                Unser erfahrenes Team kümmert sich mit Leidenschaft und Fachwissen um alle Belange rund um Ihr Fahrzeug.
-                Ob Inspektion, Reparatur oder TÜV-Service – bei uns sind Sie in guten Händen.
+                Unsere Werkstatt steht für Kompetenz, Persönlichkeit und Vertrauen. Als fairer Partner ist jederzeit auf
+                uns Verlass. Reparaturen werden bei uns mit Ersatzteilen in Erstausrüsterqualität durchgeführt.
+                Persönliche Beratung steht bei uns ganz oben. Unsere Werkstatt geht auf Ihre individuellen Wünsche ein.
+                Schließlich kennen wir Ihre Automarke und reparieren sie in Profiqualität. Verlassen Sie sich drauf.
               </p>
-              <p>
-                Wir arbeiten herstellerunabhängig und betreuen alle Automarken mit der gleichen Sorgfalt und
-                Professionalität. Moderne Diagnosetechnik und kontinuierliche Weiterbildung unserer Mitarbeiter
-                garantieren Ihnen erstklassigen Service.
+              <p className="font-semibold text-foreground">
+                Wir freuen uns darauf, Ihnen weiterzuhelfen.
               </p>
+              <p className="text-primary">Ihr Rüsselsheimer Garage Team</p>
             </div>
+            {/* </CHANGE> */}
             <div className="mt-8 pt-8 border-t border-border">
               <h3 className="text-sm font-semibold text-muted-foreground mb-4">Vertrauen Sie auf Qualität</h3>
               <div className="flex items-center gap-6">
