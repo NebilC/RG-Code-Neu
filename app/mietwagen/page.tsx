@@ -154,7 +154,7 @@ export default function MietwagenPage() {
               Teilen Sie uns mit, wonach Sie suchen. Wir melden uns so schnell wie möglich bei Ihnen.
             </p>
           </div>
-
+<form action="httpsS://getform.io/f/bqpzwqjb" method="POST"></form>
           <Card className="bg-card border-border">
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -264,6 +264,7 @@ export default function MietwagenPage() {
               </form>
             </CardContent>
           </Card>
+          </form>
         </div>
       </section>
     </div>
