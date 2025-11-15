@@ -7,9 +7,12 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Clock, Users, Shield } from 'lucide-react'
 import { useState } from "react"
+import { useToast } from "@/hooks/use-toast"
 
 export default function MietwagenPage() {
   const [selectedCar, setSelectedCar] = useState<string | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { toast } = useToast()
 
   const cars = [
     {
@@ -75,9 +78,42 @@ export default function MietwagenPage() {
     },
   ]
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    alert("Vielen Dank für Ihre Anfrage! Wir melden uns schnellstmöglich bei Ihnen.")
+    setIsSubmitting(true)
+
+    const form = e.target as HTMLFormElement
+    const formData = new FormData(form)
+
+    try {
+      const response = await fetch("https://getform.io/f/bpjzqwpb", {
+        method: "POST",
+        body: formData,
+      })
+
+      if (response.ok) {
+        toast({
+          title: "Anfrage gesendet!",
+          description: "Vielen Dank für Ihre Anfrage! Wir melden uns schnellstmöglich bei Ihnen.",
+        })
+        form.reset()
+        setSelectedCar(null)
+      } else {
+        toast({
+          title: "Fehler",
+          description: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+          variant: "destructive",
+        })
+      }
+    } catch (error) {
+      toast({
+        title: "Fehler",
+        description: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+        variant: "destructive",
+      })
+    }
+
+    setIsSubmitting(false)
   }
 
   return (
@@ -154,7 +190,7 @@ export default function MietwagenPage() {
               Teilen Sie uns mit, wonach Sie suchen. Wir melden uns so schnell wie möglich bei Ihnen.
             </p>
           </div>
-<form action="httpsS://getform.io/f/bqpzwqjb" method="POST"></form>
+
           <Card className="bg-card border-border">
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -164,6 +200,7 @@ export default function MietwagenPage() {
                   </Label>
                   <Input
                     id="name"
+                    name="name"
                     required
                     className="bg-background border-border text-foreground mt-2"
                     placeholder="Ihr vollständiger Name"
@@ -176,6 +213,7 @@ export default function MietwagenPage() {
                   </Label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     required
                     className="bg-background border-border text-foreground mt-2"
@@ -189,6 +227,7 @@ export default function MietwagenPage() {
                   </Label>
                   <Input
                     id="phone"
+                    name="phone"
                     type="tel"
                     required
                     className="bg-background border-border text-foreground mt-2"
@@ -202,9 +241,11 @@ export default function MietwagenPage() {
                   </Label>
                   <Input
                     id="car"
+                    name="car"
                     className="bg-background border-border text-foreground mt-2"
                     placeholder="z.B. Porsche 911 Turbo"
-                    defaultValue={selectedCar || ""}
+                    value={selectedCar || ""}
+                    onChange={(e) => setSelectedCar(e.target.value)}
                   />
                 </div>
 
@@ -214,6 +255,7 @@ export default function MietwagenPage() {
                   </Label>
                   <Input
                     id="destination"
+                    name="destination"
                     className="bg-background border-border text-foreground mt-2"
                     placeholder="Wohin geht die Reise?"
                   />
@@ -226,6 +268,7 @@ export default function MietwagenPage() {
                     </Label>
                     <Input
                       id="startDate"
+                      name="startDate"
                       type="date"
                       className="bg-background border-border text-foreground mt-2"
                     />
@@ -236,6 +279,7 @@ export default function MietwagenPage() {
                     </Label>
                     <Input
                       id="endDate"
+                      name="endDate"
                       type="date"
                       className="bg-background border-border text-foreground mt-2"
                     />
@@ -248,6 +292,7 @@ export default function MietwagenPage() {
                   </Label>
                   <Textarea
                     id="message"
+                    name="message"
                     rows={4}
                     className="bg-background border-border text-foreground mt-2"
                     placeholder="Weitere Wünsche oder Anmerkungen..."
@@ -257,14 +302,14 @@ export default function MietwagenPage() {
                 <Button
                   type="submit"
                   size="lg"
+                  disabled={isSubmitting}
                   className="w-full bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors"
                 >
-                  Anfrage senden
+                  {isSubmitting ? "Wird gesendet..." : "Anfrage senden"}
                 </Button>
               </form>
             </CardContent>
           </Card>
-          </form>
         </div>
       </section>
     </div>

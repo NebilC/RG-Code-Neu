@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Menu, X, Phone } from 'lucide-react'
 import { useState } from "react"
 import Image from "next/image"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Navigation() {
   const pathname = usePathname()
@@ -19,7 +20,6 @@ export function Navigation() {
     { href: "/ueber-uns", label: "Über Uns" },
     { href: "/kontakt", label: "Kontakt" },
   ]
-  // </CHANGE>
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
@@ -49,6 +49,7 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
+            <ThemeToggle />
             <Button
               asChild
               className="bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors"
@@ -61,9 +62,12 @@ export function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-foreground" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button className="text-foreground" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}

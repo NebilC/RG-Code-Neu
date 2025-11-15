@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { useToast } from "@/hooks/use-toast"
-import { Calendar, Send } from "lucide-react"
+import { Calendar, Send } from 'lucide-react'
 
 export function AppointmentForm() {
   const { toast } = useToast()
@@ -19,16 +19,37 @@ export function AppointmentForm() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    const form = e.target as HTMLFormElement
+    const formData = new FormData(form)
 
-    toast({
-      title: "Anfrage gesendet!",
-      description: "Wir melden uns schnellstmöglich bei Ihnen.",
-    })
+    try {
+      const response = await fetch("https://getform.io/f/bpjzqwpb", {
+        method: "POST",
+        body: formData,
+      })
+
+      if (response.ok) {
+        toast({
+          title: "Anfrage gesendet!",
+          description: "Wir melden uns schnellstmöglich bei Ihnen.",
+        })
+        form.reset()
+      } else {
+        toast({
+          title: "Fehler",
+          description: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+          variant: "destructive",
+        })
+      }
+    } catch (error) {
+      toast({
+        title: "Fehler",
+        description: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+        variant: "destructive",
+      })
+    }
 
     setIsSubmitting(false)
-    ;(e.target as HTMLFormElement).reset()
   }
 
   return (
