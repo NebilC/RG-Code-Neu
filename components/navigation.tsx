@@ -1,9 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Phone } from 'lucide-react'
+import { Menu, X, Phone } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -15,7 +15,6 @@ export function Navigation() {
   const navItems = [
     { href: "/", label: "Startseite" },
     { href: "/leistungen", label: "Leistungen" },
-    { href: "/mietwagen", label: "Mietwagen" },
     { href: "/galerie", label: "Galerie" },
     { href: "/ueber-uns", label: "Über Uns" },
     { href: "/kontakt", label: "Kontakt" },
