@@ -120,27 +120,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Mobile: Show Nebilus credit on separate line */}
-          <div className="sm:hidden flex justify-center items-center gap-2 text-xs text-muted-foreground mt-4">
-            <span>Designed by</span>
-            <a
-              href="https://www.nebilus.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 transition-opacity hover:opacity-80"
-            >
-              <Image
-                src="/images/Nebilus Logo.jpg"
-                alt="Nebilus Studios Logo"
-                width={28}
-                height={28}
-                className="w-7 h-7 rounded-full object-cover"
-              />
-              <span style={{ color: "#e5237b" }} className="font-medium">
-                Nebilus Studios
-              </span>
-            </a>
-          </div>
         </div>
       </div>
     </footer>
