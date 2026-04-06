@@ -90,9 +90,8 @@ export function Footer() {
             </p>
 
             <div className="flex items-center gap-2 text-xs">
-              <span>Designed by</span>
               <a
-                href="https://www.nebilus.de/"
+                href="https://www.nebilus.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 transition-opacity hover:opacity-80"
@@ -100,13 +99,10 @@ export function Footer() {
                 <Image
                   src="/images/icon-20hintergrund.png"
                   alt="Nebilus Studios Logo"
-                  width={24}
+                  width={80}
                   height={24}
-                  className="w-6 h-6 rounded-full border-2 border-black"
+                  className="h-6 w-auto"
                 />
-                <span style={{ color: "#e5237b" }} className="font-medium">
-                  Nebilus Studios
-                </span>
               </a>
             </div>
 
@@ -122,9 +118,8 @@ export function Footer() {
 
           {/* Mobile: Show Nebilus credit on separate line */}
           <div className="sm:hidden flex justify-center items-center gap-2 text-xs text-muted-foreground mt-4">
-            <span>Designed by</span>
             <a
-              href="https://www.nebilus.de/"
+              href="https://www.nebilus.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 transition-opacity hover:opacity-80"
@@ -132,13 +127,10 @@ export function Footer() {
               <Image
                 src="/images/icon-20hintergrund.png"
                 alt="Nebilus Studios Logo"
-                width={24}
+                width={80}
                 height={24}
-                className="w-6 h-6 rounded-full border-2 border-black"
+                className="h-6 w-auto"
               />
-              <span style={{ color: "#e5237b" }} className="font-medium">
-                Nebilus Studios
-              </span>
             </a>
           </div>
         </div>
