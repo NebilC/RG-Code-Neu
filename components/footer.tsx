@@ -95,18 +95,15 @@ export function Footer() {
                 href="https://www.nebilus.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 transition-opacity hover:opacity-80"
+                className="flex items-center transition-opacity hover:opacity-80"
               >
                 <Image
-                  src="/images/icon-20hintergrund.png"
+                  src="/images/Nebilus Logo.jpg"
                   alt="Nebilus Studios Logo"
-                  width={24}
-                  height={24}
-                  className="w-6 h-6 rounded-full border-2 border-black"
+                  width={80}
+                  height={32}
+                  className="h-8 w-auto"
                 />
-                <span style={{ color: "#e5237b" }} className="font-medium">
-                  Nebilus Studios
-                </span>
               </a>
             </div>
 
@@ -127,18 +124,15 @@ export function Footer() {
               href="https://www.nebilus.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 transition-opacity hover:opacity-80"
+              className="flex items-center transition-opacity hover:opacity-80"
             >
               <Image
-                src="/images/icon-20hintergrund.png"
+                src="/images/Nebilus Logo.jpg"
                 alt="Nebilus Studios Logo"
-                width={24}
-                height={24}
-                className="w-6 h-6 rounded-full border-2 border-black"
+                width={80}
+                height={32}
+                className="h-8 w-auto"
               />
-              <span style={{ color: "#e5237b" }} className="font-medium">
-                Nebilus Studios
-              </span>
             </a>
           </div>
         </div>
